@@ -55,13 +55,15 @@ body {
   
   .hero-banner-img {
     position: absolute;
-    right: 40px;
-    top: 0px;
-    width: 700px;
-    height: 900px;
-    margin-top: -330px;
+    left:1000px;
+  right: 400px;
+  top:0px;
+  width: 1000px;
+  height: auto;
   
   }
+  
+  
   
   .exercise-card {
     width: 400px;
