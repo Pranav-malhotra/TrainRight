@@ -10,8 +10,12 @@ const BodyPart = ({ item, bodyPart, setBodyPart }) => {
       alignContent="center"
       justifyContent="center"
       className="bodyPart-card"
-      onClick={() => {setBodyPart(item);
-        window.scrollTo({top: 1800, left:100, behavior:'smooth'})
+      onClick={() => { if (setBodyPart) {
+        setBodyPart(item); // Check that setBodyPart is a valid function before calling it.
+      } else {
+        console.error("setBodyPart is not defined!");
+      }
+        window.scrollTo({top: 1800, left:100, behavior:'smooth'});
       }}
       sx={{
         border: bodyPart === item ? '4px solid #FF2625' : '',
