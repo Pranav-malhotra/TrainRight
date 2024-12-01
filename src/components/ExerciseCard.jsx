@@ -2,7 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Stack, Typography } from '@mui/material';
 
-const ExerciseCard = ({ exercise }) => (
+const ExerciseCard = ({ exercise }) => {
+  if (!exercise) {
+    return (
+      <Typography variant="h6" color="textSecondary" align="center" sx={{ mt: 4 }}>
+        Loading exercise details...
+      </Typography>
+    );
+  }
+  return(
   <Link className="exercise-card" to={`/exercise/${exercise.id}`}>
     <img src={exercise.gifUrl} alt={exercise.name} loading="lazy" />
     <Stack direction="row">
@@ -14,9 +22,10 @@ const ExerciseCard = ({ exercise }) => (
       </Button>
     </Stack>
     <Typography ml="21px" color="#000" fontWeight="bold" sx={{ fontSize: { lg: '24px', xs: '20px' } }} mt="11px" pb="10px" textTransform="capitalize">
-      {exercise.name}
+      {exercise.name} 
     </Typography>
   </Link>
-);
+  );
+};
 
 export default ExerciseCard;

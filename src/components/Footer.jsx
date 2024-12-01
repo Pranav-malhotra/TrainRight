@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { Box } from '@mui/material';
 
-const Footer = () => {
-  return (
-    <div>Footer</div>
-  )
-}
+const Footer = () => (
+  <Box mt="80px" bgcolor="#FFF3F4">
 
-export default Footer
+     </Box>
+);
+
+export default Footer;
